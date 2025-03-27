@@ -11,7 +11,7 @@ export function getNeoncubePrivateMessagesDefaultColors() {
   return {
     senderBackgroundColor: makeSixDigitHexCode(computedStyles.getPropertyValue('--primary-color')),
     recipientBackgroundColor: '#9CBF3E',
-    senderTextColor: makeSixDigitHexCode(computedStyles.getPropertyValue('--secondary-color')),
+    senderTextColor: makeSixDigitHexCode(computedStyles.getPropertyValue('--text-color')),
     recipientTextColor: '#000000'
   }
 }

@@ -5,6 +5,7 @@ namespace Neoncube\FlarumPrivateMessages\Commands;
 use Flarum\Notification\NotificationSyncer;
 use Flarum\User\Exception\PermissionDeniedException;
 use Flarum\User\User;
+use Flarum\Settings\SettingsRepositoryInterface;
 use http\Message\Parser;
 use Neoncube\FlarumPrivateMessages\Conversation;
 use Neoncube\FlarumPrivateMessages\ConversationUser;
@@ -15,10 +16,12 @@ use Pusher\Pusher;
 class NewMessageHandler
 {
     protected $notifications;
+    protected $settings;
 
-    public function __construct(NotificationSyncer $notifications)
+    public function __construct(NotificationSyncer $notifications, SettingsRepositoryInterface $settings)
     {
         $this->notifications = $notifications;
+        $this->settings = $settings;
     }
 
     public function handle(NewMessage $command)
@@ -75,7 +78,7 @@ class NewMessageHandler
             return;
 
         $this->notifications->sync(
-            new NewPrivateMessageBlueprint($message, $conversation, $actor),
+            new NewPrivateMessageBlueprint($message, $conversation, $actor, $this->settings),
             [$recipient]
         );
     }

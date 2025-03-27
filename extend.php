@@ -53,6 +53,27 @@ return [
         ->serializeToForum('neoncubePrivateMessagesReturnKey', 'neoncube-private-messages.return_key', function ($value) {
             return (bool)$value;
         }),
+
+    (new Extend\Settings())
+        ->serializeToForum('neoncubePrivateMessagesEnableCustomColors', 'neoncube-private-messages.enable_custom_colors', function ($value) {
+            return (bool)$value;
+        }),
+    (new Extend\Settings())
+        ->serializeToForum('neoncubePrivateMessagesRecipientBackgroundColor', 'neoncube-private-messages.recipient_background_color', function ($value) {
+            return $value;
+        }),
+    (new Extend\Settings())
+        ->serializeToForum('neoncubePrivateMessagesSenderBackgroundColor', 'neoncube-private-messages.sender_background_color', function ($value) {
+            return $value;
+        }),
+    (new Extend\Settings())
+        ->serializeToForum('neoncubePrivateMessagesRecipientTextColor', 'neoncube-private-messages.recipient_text_color', function ($value) {
+            return $value;
+        }),
+    (new Extend\Settings())
+        ->serializeToForum('neoncubePrivateMessagesSenderTextColor', 'neoncube-private-messages.sender_text_color', function ($value) {
+            return $value;
+        }),
     // (new Extend\Settings())
     //     ->serializeToForum('neoncubePrivateMessagesShowReadReceipts', 'neoncube-private-messages.show_read_receipts', function ($value) {
     //         return (bool)$value;

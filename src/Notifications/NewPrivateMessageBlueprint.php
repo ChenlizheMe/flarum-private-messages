@@ -4,6 +4,7 @@ namespace Neoncube\FlarumPrivateMessages\Notifications;
 
 use Flarum\Notification\Blueprint\BlueprintInterface;
 use Flarum\Notification\MailableInterface;
+use Flarum\Settings\SettingsRepositoryInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Neoncube\FlarumPrivateMessages\Message;
 
@@ -12,12 +13,16 @@ class NewPrivateMessageBlueprint implements BlueprintInterface, MailableInterfac
     public $message;
     public $conversation;
     public $user;
+    public $primaryColor;
+    public $secondaryColor;
 
-    public function __construct(Message $message, $conversation, $user)
+    public function __construct(Message $message, $conversation, $user, SettingsRepositoryInterface $settings)
     {
         $this->message = $message;
         $this->conversation = $conversation;
         $this->user = $user;
+        $this->primaryColor = $settings->get('theme_primary_color');
+        $this->secondaryColor = $settings->get('theme_secondary_color');
     }
 
     public function getSubject()
@@ -51,8 +56,10 @@ class NewPrivateMessageBlueprint implements BlueprintInterface, MailableInterfac
 
     public function getEmailView()
     {
-        // HTML?
-        return ['html' => 'flarum-private-messages::emails.newPrivateMessage'];
+        return [
+            'text' => 'flarum-private-messages::emails.newPrivateMessageText',
+            'html' => 'flarum-private-messages::emails.newPrivateMessageHtml'
+        ];
     }
 
     public function getEmailSubject(TranslatorInterface $translator)

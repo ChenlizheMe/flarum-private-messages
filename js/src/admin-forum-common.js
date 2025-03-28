@@ -5,8 +5,8 @@ function makeSixDigitHexCode(hexColor) {
   return '#' + hexColor[1] + hexColor[1] + hexColor[2] + hexColor[2] + hexColor[3] + hexColor[3];
 }
 
-export function getNeoncubePrivateMessagesDefaultColors(app) {
-  const useOldDefaultColors = app.forum.attribute('neoncubePrivateMessagesInitialInstalledVersion') === '1.4.0';
+export function getNeoncubePrivateMessagesDefaultColors(initialInstalledVersion) {
+  const useOldDefaultColors = initialInstalledVersion === '1.4.0';
 
   const computedStyles = getComputedStyle(document.documentElement, null);
 
@@ -28,7 +28,9 @@ export function getNeoncubePrivateMessagesDefaultColors(app) {
 }
 
 export function getNeoncubePrivateMessagesColors(app) {
-  const defaultColors = getNeoncubePrivateMessagesDefaultColors(app);
+  const initialInstalledVersion = app.forum.attribute('neoncubePrivateMessagesInitialInstalledVersion');
+
+  const defaultColors = getNeoncubePrivateMessagesDefaultColors(initialInstalledVersion);
 
   const enableCustomColors = app.forum.attribute('neoncubePrivateMessagesEnableCustomColors');
 

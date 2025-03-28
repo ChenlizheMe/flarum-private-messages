@@ -17,7 +17,7 @@ app.initializers.add('neoncube-private-messages', () => {
     //   help: app.translator.trans('neoncube-private-messages.admin.settings.show_read_receipts_help')
     // })
     .registerSetting(function () {
-      const defaultColors = getNeoncubePrivateMessagesDefaultColors();
+      const defaultColors = getNeoncubePrivateMessagesDefaultColors(app);
 
       const enableCustomColorsSetting = this.setting('neoncube-private-messages.enable_custom_colors');
       const senderBackgroundColorSetting = this.setting('neoncube-private-messages.sender_background_color');

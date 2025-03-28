@@ -50,6 +50,11 @@ return [
         }),
 
     (new Extend\Settings())
+        ->serializeToForum('neoncubePrivateMessagesInitialInstalledVersion', 'neoncube-private-messages.initial_installed_version', function ($value) {
+            return $value;
+        }),
+
+    (new Extend\Settings())
         ->serializeToForum('neoncubePrivateMessagesReturnKey', 'neoncube-private-messages.return_key', function ($value) {
             return (bool)$value;
         }),

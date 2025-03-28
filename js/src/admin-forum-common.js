@@ -5,19 +5,30 @@ function makeSixDigitHexCode(hexColor) {
   return '#' + hexColor[1] + hexColor[1] + hexColor[2] + hexColor[2] + hexColor[3] + hexColor[3];
 }
 
-export function getNeoncubePrivateMessagesDefaultColors() {
+export function getNeoncubePrivateMessagesDefaultColors(app) {
+  const useOldDefaultColors = app.forum.attribute('neoncubePrivateMessagesInitialInstalledVersion') === '1.4.0';
+
   const computedStyles = getComputedStyle(document.documentElement, null);
 
   return {
     senderBackgroundColor: makeSixDigitHexCode(computedStyles.getPropertyValue('--primary-color')),
-    recipientBackgroundColor: '#9CBF3E',
-    senderTextColor: makeSixDigitHexCode(computedStyles.getPropertyValue('--text-color')),
-    recipientTextColor: '#000000'
+    recipientBackgroundColor: useOldDefaultColors ?
+      makeSixDigitHexCode(computedStyles.getPropertyValue('--muted-more-color'))
+      :
+      '#9CBF3E',
+    senderTextColor: useOldDefaultColors ?
+      makeSixDigitHexCode(computedStyles.getPropertyValue('--secondary-color'))
+      :
+      makeSixDigitHexCode(computedStyles.getPropertyValue('--text-color')),
+    recipientTextColor: useOldDefaultColors ?
+      makeSixDigitHexCode(computedStyles.getPropertyValue('--secondary-color'))
+      :
+      '#000000'
   }
 }
 
 export function getNeoncubePrivateMessagesColors(app) {
-  const defaultColors = getNeoncubePrivateMessagesDefaultColors();
+  const defaultColors = getNeoncubePrivateMessagesDefaultColors(app);
 
   const enableCustomColors = app.forum.attribute('neoncubePrivateMessagesEnableCustomColors');
 

@@ -10,8 +10,6 @@ export default class UserSearchSource {
 
     this.query = query;
 
-    print(query);
-
     if (!app.cache.conversationResults[this.query]) {
       this.loading = true;
 

@@ -57,6 +57,7 @@ class NewPrivateMessageBlueprint implements BlueprintInterface, MailableInterfac
     public function getEmailView()
     {
         return [
+            'text' => 'flarum-private-messages::emails.newPrivateMessageText',
             'html' => 'flarum-private-messages::emails.newPrivateMessageHtml'
         ];
     }

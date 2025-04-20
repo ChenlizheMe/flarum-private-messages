@@ -10,6 +10,6 @@ export default class Conversation extends mixin(Model, {
   updatedAt: Model.attribute('updatedAt', Model.transformDate),
 }) {
   apiEndpoint() {
-    return `/neoncube-private-messages/conversations${this.exists ? `/${this.data.id}` : ''}`;
+    return `/chenlizheme-private-messages/conversations${this.exists ? `/${this.data.id}` : ''}`;
   }
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Commands;
+namespace ChenlizheMe\FlarumPrivateMessages\Commands;
 
 use Flarum\User\AssertPermissionTrait;
 use Illuminate\Contracts\Bus\Dispatcher as BusDispatcher;
 use InvalidArgumentException;
-use Neoncube\FlarumPrivateMessages\Conversation;
-use Neoncube\FlarumPrivateMessages\ConversationUser;
+use ChenlizheMe\FlarumPrivateMessages\Conversation;
+use ChenlizheMe\FlarumPrivateMessages\ConversationUser;
 
 class StartConversationHandler
 {

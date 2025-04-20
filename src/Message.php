@@ -1,11 +1,11 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages;
+namespace ChenlizheMe\FlarumPrivateMessages;
 
 use Carbon\Carbon;
 use Flarum\Database\AbstractModel;
 use Flarum\User\User;
-use Neoncube\FlarumPrivateMessages\Conversation;
+use ChenlizheMe\FlarumPrivateMessages\Conversation;
 
 class Message extends AbstractModel
 {

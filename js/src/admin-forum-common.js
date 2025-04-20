@@ -5,7 +5,7 @@ function makeSixDigitHexCode(hexColor) {
   return '#' + hexColor[1] + hexColor[1] + hexColor[2] + hexColor[2] + hexColor[3] + hexColor[3];
 }
 
-export function getNeoncubePrivateMessagesDefaultColors(initialInstalledVersion) {
+export function getChenlizheMePrivateMessagesDefaultColors(initialInstalledVersion) {
   const useOldDefaultColors = initialInstalledVersion === '1.4.0';
 
   const computedStyles = getComputedStyle(document.documentElement, null);
@@ -27,18 +27,18 @@ export function getNeoncubePrivateMessagesDefaultColors(initialInstalledVersion)
   }
 }
 
-export function getNeoncubePrivateMessagesColors(app) {
-  const initialInstalledVersion = app.forum.attribute('neoncubePrivateMessagesInitialInstalledVersion');
+export function getChenlizheMePrivateMessagesColors(app) {
+  const initialInstalledVersion = app.forum.attribute('chenlizhemePrivateMessagesInitialInstalledVersion');
 
-  const defaultColors = getNeoncubePrivateMessagesDefaultColors(initialInstalledVersion);
+  const defaultColors = getChenlizheMePrivateMessagesDefaultColors(initialInstalledVersion);
 
-  const enableCustomColors = app.forum.attribute('neoncubePrivateMessagesEnableCustomColors');
+  const enableCustomColors = app.forum.attribute('chenlizhemePrivateMessagesEnableCustomColors');
 
   return {
-    senderBackgroundColor: (enableCustomColors && app.forum.attribute('neoncubePrivateMessagesSenderBackgroundColor') || null) ?? defaultColors.senderBackgroundColor,
-    recipientBackgroundColor: (enableCustomColors && app.forum.attribute('neoncubePrivateMessagesRecipientBackgroundColor') || null) ?? defaultColors.recipientBackgroundColor,
+    senderBackgroundColor: (enableCustomColors && app.forum.attribute('chenlizhemePrivateMessagesSenderBackgroundColor') || null) ?? defaultColors.senderBackgroundColor,
+    recipientBackgroundColor: (enableCustomColors && app.forum.attribute('chenlizhemePrivateMessagesRecipientBackgroundColor') || null) ?? defaultColors.recipientBackgroundColor,
 
-    senderTextColor: (enableCustomColors && app.forum.attribute('neoncubePrivateMessagesSenderTextColor') || null) ?? defaultColors.senderTextColor,
-    recipientTextColor: (enableCustomColors && app.forum.attribute('neoncubePrivateMessagesRecipientTextColor') || null) ?? defaultColors.recipientTextColor
+    senderTextColor: (enableCustomColors && app.forum.attribute('chenlizhemePrivateMessagesSenderTextColor') || null) ?? defaultColors.senderTextColor,
+    recipientTextColor: (enableCustomColors && app.forum.attribute('chenlizhemePrivateMessagesRecipientTextColor') || null) ?? defaultColors.recipientTextColor
   };
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Api\Serializers;
+namespace ChenlizheMe\FlarumPrivateMessages\Api\Serializers;
 
 use Flarum\Api\Serializer\AbstractSerializer;
-use Neoncube\FlarumPrivateMessages\Conversation;
+use ChenlizheMe\FlarumPrivateMessages\Conversation;
 
 class ConversationSerializer extends AbstractSerializer
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Commands;
+namespace ChenlizheMe\FlarumPrivateMessages\Commands;
 
 use Carbon\Carbon;
 use Flarum\User\Exception\PermissionDeniedException;
-use Neoncube\FlarumPrivateMessages\Conversation;
-use Neoncube\FlarumPrivateMessages\ConversationUser;
-use Neoncube\FlarumPrivateMessages\Message;
+use ChenlizheMe\FlarumPrivateMessages\Conversation;
+use ChenlizheMe\FlarumPrivateMessages\ConversationUser;
+use ChenlizheMe\FlarumPrivateMessages\Message;
 use Pusher\Pusher;
 
 class ReadMessageHandler

@@ -1,16 +1,16 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Commands;
+namespace ChenlizheMe\FlarumPrivateMessages\Commands;
 
 use Flarum\Notification\NotificationSyncer;
 use Flarum\User\Exception\PermissionDeniedException;
 use Flarum\User\User;
 use Flarum\Settings\SettingsRepositoryInterface;
 use http\Message\Parser;
-use Neoncube\FlarumPrivateMessages\Conversation;
-use Neoncube\FlarumPrivateMessages\ConversationUser;
-use Neoncube\FlarumPrivateMessages\Message;
-use Neoncube\FlarumPrivateMessages\Notifications\NewPrivateMessageBlueprint;
+use ChenlizheMe\FlarumPrivateMessages\Conversation;
+use ChenlizheMe\FlarumPrivateMessages\ConversationUser;
+use ChenlizheMe\FlarumPrivateMessages\Message;
+use ChenlizheMe\FlarumPrivateMessages\Notifications\NewPrivateMessageBlueprint;
 use Pusher\Pusher;
 
 class NewMessageHandler
@@ -74,7 +74,7 @@ class NewMessageHandler
     }
 
     public function sendNewMessageNotification($message, $conversation, $actor, $recipient) {
-        if(!$recipient->can('neoncube-private-messages.allowUsersToReceiveEmailNotifications'))
+        if(!$recipient->can('chenlizheme-private-messages.allowUsersToReceiveEmailNotifications'))
             return;
 
         $this->notifications->sync(

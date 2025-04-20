@@ -17,7 +17,7 @@ export default class ConversationsList extends Component {
     app.cache.conversations ??= [];
 
     app.store
-      .find('neoncube-private-messages/conversations')
+      .find('chenlizheme-private-messages/conversations')
       .then((results) => {
         delete results.payload;
         app.cache.conversations = results;
@@ -53,8 +53,8 @@ export default class ConversationsList extends Component {
         <div className="people-list" id="people-list">
           <Button onclick={() => this.showModal()} className="Button Button--primary" disabled={!app.forum.attribute('canMessage')}>
             {app.forum.attribute('canMessage')
-              ? app.translator.trans('neoncube-private-messages.forum.chat.start')
-              : app.translator.trans('neoncube-private-messages.forum.chat.cant_start')}
+              ? app.translator.trans('chenlizheme-private-messages.forum.chat.start')
+              : app.translator.trans('chenlizheme-private-messages.forum.chat.cant_start')}
           </Button>
           {
             hasConversations &&
@@ -108,7 +108,7 @@ export default class ConversationsList extends Component {
     this.loading = true;
 
     app.store
-      .find('neoncube-private-messages/conversations', { offset: app.cache.conversations.length })
+      .find('chenlizheme-private-messages/conversations', { offset: app.cache.conversations.length })
       .then((results) => {
         delete results.payload;
         results.map((result) => {

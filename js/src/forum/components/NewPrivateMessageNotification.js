@@ -20,6 +20,6 @@ export default class NewPrivateMessageNotification extends Notification {
     // // The Flarum username() function expects displayName() to be a function, and it outputs a <span>, which I don't think is what we want.
     const username = (fromUser && fromUser.data.attributes.displayName) || app.translator.trans('core.lib.username.deleted_text');
 
-    return app.translator.trans('neoncube-private-messages.forum.notifications.web.new_private_message.body', { 'fromUser': username });
+    return app.translator.trans('chenlizheme-private-messages.forum.notifications.web.new_private_message.body', { 'fromUser': username });
   }
 }

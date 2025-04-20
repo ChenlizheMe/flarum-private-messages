@@ -1,14 +1,14 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Api\Controllers;
+namespace ChenlizheMe\FlarumPrivateMessages\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractShowController;
 use Flarum\User\Exception\PermissionDeniedException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Neoncube\FlarumPrivateMessages\Api\Serializers\ConversationSerializer;
-use Neoncube\FlarumPrivateMessages\Conversation;
-use Neoncube\FlarumPrivateMessages\Message;
+use ChenlizheMe\FlarumPrivateMessages\Api\Serializers\ConversationSerializer;
+use ChenlizheMe\FlarumPrivateMessages\Conversation;
+use ChenlizheMe\FlarumPrivateMessages\Message;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 

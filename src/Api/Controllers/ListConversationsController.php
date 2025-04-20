@@ -1,10 +1,10 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Api\Controllers;
+namespace ChenlizheMe\FlarumPrivateMessages\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractListController;
-use Neoncube\FlarumPrivateMessages\Api\Serializers\ConversationSerializer;
-use Neoncube\FlarumPrivateMessages\Conversation;
+use ChenlizheMe\FlarumPrivateMessages\Api\Serializers\ConversationSerializer;
+use ChenlizheMe\FlarumPrivateMessages\Conversation;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Api\Controllers;
+namespace ChenlizheMe\FlarumPrivateMessages\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractDeleteController;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Arr;
-use Neoncube\FlarumPrivateMessages\Commands\HideMessage;
+use ChenlizheMe\FlarumPrivateMessages\Commands\HideMessage;
 use Psr\Http\Message\ServerRequestInterface;
 
 class DeleteMessageController extends AbstractDeleteController

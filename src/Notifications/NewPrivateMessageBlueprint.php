@@ -1,12 +1,12 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Notifications;
+namespace ChenlizheMe\FlarumPrivateMessages\Notifications;
 
 use Flarum\Notification\Blueprint\BlueprintInterface;
 use Flarum\Notification\MailableInterface;
 use Flarum\Settings\SettingsRepositoryInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
-use Neoncube\FlarumPrivateMessages\Message;
+use ChenlizheMe\FlarumPrivateMessages\Message;
 
 class NewPrivateMessageBlueprint implements BlueprintInterface, MailableInterface
 {
@@ -64,7 +64,7 @@ class NewPrivateMessageBlueprint implements BlueprintInterface, MailableInterfac
 
     public function getEmailSubject(TranslatorInterface $translator)
     {
-        return $translator->trans('neoncube-private-messages.forum.notifications.email.new_private_message.subject', [
+        return $translator->trans('chenlizheme-private-messages.forum.notifications.email.new_private_message.subject', [
              '{user}' => $this->user->display_name
         ]);
     }

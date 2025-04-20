@@ -1,12 +1,12 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Api\Controllers;
+namespace ChenlizheMe\FlarumPrivateMessages\Api\Controllers;
 
 use Flarum\Api\Controller\AbstractCreateController;
 use Illuminate\Contracts\Bus\Dispatcher;
 use Illuminate\Support\Arr;
-use Neoncube\FlarumPrivateMessages\Commands\StartConversation;
-use Neoncube\FlarumPrivateMessages\Api\Serializers\ConversationSerializer;
+use ChenlizheMe\FlarumPrivateMessages\Commands\StartConversation;
+use ChenlizheMe\FlarumPrivateMessages\Api\Serializers\ConversationSerializer;
 use Psr\Http\Message\ServerRequestInterface;
 use Tobscure\JsonApi\Document;
 

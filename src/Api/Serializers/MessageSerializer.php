@@ -1,10 +1,10 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Api\Serializers;
+namespace ChenlizheMe\FlarumPrivateMessages\Api\Serializers;
 
 use Flarum\Api\Serializer\AbstractSerializer;
 use Flarum\Api\Serializer\UserSerializer;
-use Neoncube\FlarumPrivateMessages\Message;
+use ChenlizheMe\FlarumPrivateMessages\Message;
 
 class MessageSerializer extends AbstractSerializer
 {

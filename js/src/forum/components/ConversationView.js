@@ -158,11 +158,11 @@ export default class ConversationView extends Component {
 
           <div className="chat-about">
             <div className="chat-with">
-              {app.translator.trans('neoncube-private-messages.forum.chat.chat_with', { username: username(this.user) })}
+              {app.translator.trans('chenlizheme-private-messages.forum.chat.chat_with', { username: username(this.user) })}
             </div>
             <div className="chat-num-messages">
               {app.translator.trans(
-                'neoncube-private-messages.forum.chat.messages_' + (parseInt(this.conversation.totalMessages()) > 1 ? 'multiple' : 'single'),
+                'chenlizheme-private-messages.forum.chat.messages_' + (parseInt(this.conversation.totalMessages()) > 1 ? 'multiple' : 'single'),
                 { count: this.conversation.totalMessages() + this.newMessageCount }
               )}
             </div>
@@ -174,7 +174,7 @@ export default class ConversationView extends Component {
             <div className="chat-history">
               <ul>
                 {!this.isNew ? (
-                  <li className="startConvo">{app.translator.trans('neoncube-private-messages.forum.chat.start_of_conversation')}</li>
+                  <li className="startConvo">{app.translator.trans('chenlizheme-private-messages.forum.chat.start_of_conversation')}</li>
                 ) : (
                   ''
                 )}
@@ -198,7 +198,7 @@ export default class ConversationView extends Component {
                             <MessageText content={message.message()} />
                             {myMessage ? (
                               parseInt(this.recipient.lastRead()) >= parseInt(message.data.attributes.number) ? (
-                                <span className="message-read" title={app.translator.trans('neoncube-private-messages.forum.chat.message_read')}>{icon('fas fa-check')}</span>
+                                <span className="message-read" title={app.translator.trans('chenlizheme-private-messages.forum.chat.message_read')}>{icon('fas fa-check')}</span>
                               ) : (
                                 ''
                               )
@@ -242,17 +242,17 @@ export default class ConversationView extends Component {
             id="MessageTextArea"
             value={this.messageContent()}
             oninput={withAttr('value', this.typingPush.bind(this))}
-            placeholder={app.translator.trans('neoncube-private-messages.forum.chat.text_placeholder')}
+            placeholder={app.translator.trans('chenlizheme-private-messages.forum.chat.text_placeholder')}
             rows="3"
             disabled={this.isSending && !this.sendTimeout}
             onkeydown={e => {
-              if (e.keyCode === 13 && app.forum.attribute('neoncubePrivateMessagesReturnKey')) {
+              if (e.keyCode === 13 && app.forum.attribute('chenlizhemePrivateMessagesReturnKey')) {
                 this.sendMessage();
               }
             }} />
 
           <Button onclick={this.sendMessage.bind(this)} className="Button Button--primary" disabled={!this.messageContent() || !this.sendTimeout}>
-            {app.translator.trans('neoncube-private-messages.forum.chat.send')}
+            {app.translator.trans('chenlizheme-private-messages.forum.chat.send')}
           </Button>
         </form>
       </div>
@@ -266,7 +266,7 @@ export default class ConversationView extends Component {
       app
         .request({
           method: 'POST',
-          url: app.forum.attribute('apiUrl') + '/neoncube-private-messages/messages/typing',
+          url: app.forum.attribute('apiUrl') + '/chenlizheme-private-messages/messages/typing',
           body: {
             conversationId: this.conversation.id(),
             userId: this.user.id(),
@@ -303,7 +303,7 @@ export default class ConversationView extends Component {
         // TODO: Can this be done when the message is created?
         app.request({
           method: 'POST',
-          url: app.forum.attribute('apiUrl') + '/neoncube-private-messages/messages/read',
+          url: app.forum.attribute('apiUrl') + '/chenlizheme-private-messages/messages/read',
           body: {
             conversationId: this.conversation.id(),
             messageId: message.id(),
@@ -316,7 +316,7 @@ export default class ConversationView extends Component {
     if (!this.isNew) return;
 
     app.store
-      .find('neoncube-private-messages/messages', this.conversation.id(), { offset })
+      .find('chenlizheme-private-messages/messages', this.conversation.id(), { offset })
       .then((results) => {
         delete results.payload;
 
@@ -325,7 +325,7 @@ export default class ConversationView extends Component {
           app
             .request({
               method: 'POST',
-              url: app.forum.attribute('apiUrl') + '/neoncube-private-messages/messages/read',
+              url: app.forum.attribute('apiUrl') + '/chenlizheme-private-messages/messages/read',
               body: {
                 conversationId: this.conversation.id(),
                 messageId: results[0].id(),

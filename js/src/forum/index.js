@@ -11,9 +11,9 @@ import ConversationsPage from './components/ConversationsPage';
 import NewPrivateMessageNotification from './components/NewPrivateMessageNotification';
 import Stream from 'flarum/common/utils/Stream';
 import addConversationsDropdown from './addConversationsDropdown';
-import { getNeoncubePrivateMessagesColors } from '../admin-forum-common';
+import { getChenlizheMePrivateMessagesColors } from '../admin-forum-common';
 
-app.initializers.add('neoncube-private-messages', (app) => {
+app.initializers.add('chenlizheme-private-messages', (app) => {
   app.store.models.messages = Message;
   app.store.models.conversations = Conversation;
   app.store.models.conversation_users = ConversationUser;
@@ -29,14 +29,14 @@ app.initializers.add('neoncube-private-messages', (app) => {
   addConversationsDropdown();
 
   setTimeout(() => {
-    const colors = getNeoncubePrivateMessagesColors(app);
+    const colors = getChenlizheMePrivateMessagesColors(app);
 
     const cssStyle = document.documentElement.style;
 
-    cssStyle.setProperty('--neoncube-private-messages-sender-background-color', colors.senderBackgroundColor);
-    cssStyle.setProperty('--neoncube-private-messages-recipient-background-color', colors.recipientBackgroundColor);
-    cssStyle.setProperty('--neoncube-private-messages-sender-text-color', colors.senderTextColor);
-    cssStyle.setProperty('--neoncube-private-messages-recipient-text-color', colors.recipientTextColor);
+    cssStyle.setProperty('--chenlizheme-private-messages-sender-background-color', colors.senderBackgroundColor);
+    cssStyle.setProperty('--chenlizheme-private-messages-recipient-background-color', colors.recipientBackgroundColor);
+    cssStyle.setProperty('--chenlizheme-private-messages-sender-text-color', colors.senderTextColor);
+    cssStyle.setProperty('--chenlizheme-private-messages-recipient-text-color', colors.recipientTextColor);
   });
 
   extend(IndexPage.prototype, 'oncreate', () => {
@@ -65,13 +65,13 @@ app.initializers.add('neoncube-private-messages', (app) => {
   });
 
   extend(NotificationGrid.prototype, 'notificationTypes', (items) => {
-    if (!app.forum.attribute('neoncubePrivateMessagesAllowUsersToReceiveEmailNotifications'))
+    if (!app.forum.attribute('chenlizhemePrivateMessagesAllowUsersToReceiveEmailNotifications'))
       return;
 
     items.add('newPrivateMessage', {
       name: 'newPrivateMessage',
       icon: 'fas fa-comment-alt',
-      label: app.translator.trans('neoncube-private-messages.forum.notifications.new_private_message'),
+      label: app.translator.trans('chenlizheme-private-messages.forum.notifications.new_private_message'),
     });
   });
 });

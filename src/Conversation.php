@@ -1,6 +1,6 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages;
+namespace ChenlizheMe\FlarumPrivateMessages;
 
 use Carbon\Carbon;
 use Flarum\Database\AbstractModel;

@@ -9,13 +9,13 @@ return [
 
         $table = $connection->getTablePrefix() . 'settings';
 
-        $connection->insert('INSERT INTO `' . $table . '` (`key`, `value`) VALUES(\'neoncube-private-messages.initial_installed_version\', ?)', [$initialInstalledVersion]);
+        $connection->insert('INSERT INTO `' . $table . '` (`key`, `value`) VALUES(\'chenlizheme-private-messages.initial_installed_version\', ?)', [$initialInstalledVersion]);
     },
     'down' => function (Builder $schema) {
         $connection = $schema->getConnection();
 
         $table = $connection->getTablePrefix() . 'settings';
 
-        $connection->insert('DELETE FROM `' . $table . '` WHERE `key` = \'neoncube-private-messages.initial_installed_version\'');
+        $connection->insert('DELETE FROM `' . $table . '` WHERE `key` = \'chenlizheme-private-messages.initial_installed_version\'');
     }
 ];

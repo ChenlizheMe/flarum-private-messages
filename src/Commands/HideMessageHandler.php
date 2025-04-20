@@ -1,9 +1,9 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Commands;
+namespace ChenlizheMe\FlarumPrivateMessages\Commands;
 
 use Flarum\User\Exception\PermissionDeniedException;
-use Neoncube\FlarumPrivateMessages\Message;
+use ChenlizheMe\FlarumPrivateMessages\Message;
 
 class HideMessageHandler
 {

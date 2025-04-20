@@ -9,7 +9,7 @@
 //     const idParam = m.route.param('id');
 
 //     app.store
-//       .find('neoncube-private-messages/conversations', idParam)
+//       .find('chenlizheme-private-messages/conversations', idParam)
 //       .then((conversation) => {
 //         this.conversation = conversation;
 

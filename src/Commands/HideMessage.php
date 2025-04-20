@@ -1,6 +1,6 @@
 <?php
 
-namespace Neoncube\FlarumPrivateMessages\Commands;
+namespace ChenlizheMe\FlarumPrivateMessages\Commands;
 
 
 use Flarum\User\User;
